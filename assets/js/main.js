@@ -5,11 +5,8 @@ createGrid(10, 10);
 function createGrid(rows, cols) {
     //variabile per selezionare l'id presente nell html
     const container = document.getElementById('grid');
-    //variabile per calcolare il numero di cell
+    //ciclo for per il calcolo delle righe
     for (let i = 1; i <= rows; i++) {
-      // Creazione dell'elemento div per la riga
-      const row = document.createElement('div');
-      row.classList.add('row');
       // Ciclo for per calcolo delle colonne
       for (let x = 1; x <= cols; x++) {
           const cellNumber = (i - 1) * cols + x;
