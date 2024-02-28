@@ -6,11 +6,16 @@ function createGrid(rows, cols) {
     //variabile per selezionare l'id presente nell html
     const container = document.getElementById('grid');
     //variabile per calcolare il numero di cell
-    const totalCells = rows * cols
-    //ciclo for per calcolo delle celle
-    for( let i = 0 ; i < totalCells ; i++){
+    for (let i = 1; i <= rows; i++) {
+      // Creazione dell'elemento div per la riga
+      const row = document.createElement('div');
+      row.classList.add('row');
+      // Ciclo for per calcolo delle colonne
+      for (let x = 1; x <= cols; x++) {
+          const cellNumber = (i - 1) * cols + x;
       // Creazione dell'elemento div per la cella
       const cell = document.createElement('div');
+      cell.textContent = cellNumber;
       // Aggiunta della classe "cell" per lo stile
       cell.classList.add('box');
       // Aggiunta della cella al contenitore della griglia
@@ -18,6 +23,7 @@ function createGrid(rows, cols) {
 
       cell.addEventListener('click', cellClick);
     }
+  }
 }
 
 // Fuction per gestire i click sui box

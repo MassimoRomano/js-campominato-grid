@@ -17,3 +17,9 @@ Step 2. **Creiamo le celle**
 Step 3. **Creiamo il cambio colore con il click**
   - aggiungiamo la fuzione per gestire il click sulle celle in console
     - aggiungiamo un cosole.log per visualizzare il click
+
+
+
+Fix
+Ho inserito un secondo ciclo for e ho modificato il primo per creare sia le colonne
+che le righe numerate 
