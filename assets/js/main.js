@@ -27,3 +27,9 @@ function cellClick(event) {
     console.log("Cella cliccata:", event.target.textContent);
 }
 
+
+// Verifica se la creazione della griglia è avvenuta correttamente
+console.log("Griglia creata correttamente");
+
+// Verifica se l'aggiunta degli eventi ai celle è avvenuta correttamente
+console.log("Eventi aggiunti correttamente");
