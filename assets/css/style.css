@@ -1,5 +1,17 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body{
     background-color: aqua;
+}
+
+.contanitor{
+    width: 40%;
+    max-width: 1200px;
+    margin: 100px auto;
 }
 
 /* aspetto per le classi create in js */
@@ -14,3 +26,6 @@ body{
      line-height: 50px;
 }
 
+.box-click{
+    background-color: blueviolet;
+}

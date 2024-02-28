@@ -6,6 +6,13 @@ function createGrid(rows, cols) {
     const totalCells = rows * cols
     //ciclo for per calcolo delle celle
     for( let i = 0 ; i < totalCells ; i++){
-        
+      // Creazione dell'elemento div per la cella
+      const cell = document.createElement('div');
+      // Aggiunta della classe "cell" per lo stile
+      cell.classList.add('box');
+      // Aggiunta della cella al contenitore della griglia
+      container.appendChild(cell);  
     }
 }
+
+
