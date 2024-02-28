@@ -11,4 +11,9 @@ Step 2. **Creiamo le celle**
       -creaiamo i div per le celle
        - aggiungiamo un add per dargli la classe cell
         -aggiungiamo i div con classe cell al padre grid
+         -aggiungiamo un event click per gestire il click sulle celle
 
+
+Step 3. **Creiamo il cambio colore con il click**
+    -aggiungiamo la fuzione per gestire il click sulle celle in console
+     -aggiungiamo un cosole.log per visualizzare il click
