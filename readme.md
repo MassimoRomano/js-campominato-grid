@@ -6,7 +6,7 @@ Step 1. **Creiamo la griglia**
      -aggiungiamo una variabile per il container e andiamo a recuperare l'id del div  
 
 Step 2. **Creiamo le celle**
-   -Utilizziamo il ciclo for per creare 100 cell 10x10
-    
+   -Utilizziamo una variabile per creare le celle 10x10
+     -creiamo un ciclo for per fare  il calcolo
 
 
