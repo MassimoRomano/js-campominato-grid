@@ -45,9 +45,9 @@ function createGrid(rows, cols, numPoop) {
 
   // Codice per generare casualmente le cacche nella griglia
   while (poop.length < numPoop) {
-    const poop = Math.floor(Math.random() * (rows * cols)) + 1;
-    if (!poop.includes(poop)) {
-      poop.push(poop);
+    const newPoop = Math.floor(Math.random() * (rows * cols)) + 1;
+    if (!poop.includes(newPoop)) {
+      poop.push(newPoop);
     }
   }
 
@@ -60,6 +60,15 @@ function createGrid(rows, cols, numPoop) {
       const cell = document.createElement('div');
       cell.textContent = cellNumber;
       cell.classList.add('box');
+
+      // Aggiunge una cacca nel caso in cui nella casella viene generato
+      if (poop.includes(cellNumber)) {
+        cell.innerHTML = '<i class="fa-solid fa-poo"></i>';
+      } else {
+        cell.textContent = cellNumber;
+      }
+
+
       container.appendChild(cell);  
       cell.addEventListener('click', cellClick);
     }
