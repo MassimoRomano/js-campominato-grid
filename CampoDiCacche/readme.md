@@ -36,5 +36,8 @@ che le righe numerate
 
 
  Step 1. **Creiamo le variabili per le cacche**
-     - creo un array per le cacche
+   - creo un array per le cacche
        - creo una varibile per il punteggio  
+
+Step 2. **Modifico gli if and else**
+  - inserisco negli if and else il numero di colonne righe e poop da creare per ogni partita 

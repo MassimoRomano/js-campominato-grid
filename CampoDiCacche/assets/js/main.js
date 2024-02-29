@@ -9,15 +9,24 @@ let score = 0;
 document.getElementById('generate').addEventListener('click', function () {
   // Otteniamo il valore del livello di difficoltà selezionato
   const difficulty = document.querySelector('input[name="difficulty"]:checked').value;
-  if (difficulty === "easy") {
-    createGrid(10, 10);
-  } else if (difficulty === "medium") {
-    createGrid(9, 9);
-  } else if (difficulty === "hard") {
-    createGrid(7, 7);
-  }
-  console.log("Griglia creata correttamente");
-  console.log("Eventi aggiunti correttamente");
+
+ // In base al livello di difficoltà selezionato, chiamiamo createGrid con le dimensioni appropriate
+ let rows, cols, numPoop;
+ if (difficulty === "easy") {
+   rows = 10;
+   cols = 10;
+   numPoop = 16;
+ } else if (difficulty === "medium") {
+   rows = 9;
+   cols = 9;
+   numPoop = 16;
+ } else if (difficulty === "hard") {
+   rows = 7;
+   cols = 7;
+   numPoop = 16;
+ }
+
+ createGrid(rows, cols, numPoop);
 });
 
 // Function per creare la griglia di gioco 10x10
