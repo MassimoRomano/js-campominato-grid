@@ -1,6 +1,11 @@
 
 // Creazione della griglia di gioco 10x10
-createGrid(10, 10);
+document.getElementById('generate').addEventListener('click', function() {
+  createGrid(10, 10);
+  console.log("Griglia creata correttamente");
+  console.log("Eventi aggiunti correttamente");
+});
+
 // Function per creare la griglia di gioco 10x10
 function createGrid(rows, cols) {
     //variabile per selezionare l'id presente nell html
@@ -31,8 +36,3 @@ function cellClick(event) {
 }
 
 
-// Verifica se la creazione della griglia è avvenuta correttamente
-console.log("Griglia creata correttamente");
-
-// Verifica se l'aggiunta degli eventi ai celle è avvenuta correttamente
-console.log("Eventi aggiunti correttamente");
