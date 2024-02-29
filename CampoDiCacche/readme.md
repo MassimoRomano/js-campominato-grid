@@ -45,8 +45,14 @@ Step 2. **Modifico gli if and else**
 Step 4. **Genero numeri casuali per le poop**
   - aggiungo un ciclo while per generare cacche in modo random
 
-Step 5. **Genero una funzione per i click**
+Step 5. **Genera una funziona per i click sulle celle**
+  - if se clicchi sulla casella sbagliata il gioco mi da una cacca
+    - else se clicchi sulla casella giusta il gioco aumenta il punteggio 
+
+
+Step 6. **Genero una funzione per i click**
   - creo una variabile per i numeri cliccati
    - aggungo un if and else per generare la funzione di fine gioco in caso l'utente trova una cacca 
     - if nel caso in cui il giocatore clicca su un numero dove e generata una cacca il gioco finisce
       - else nel caso clicca su un numero senza cacche il gioco continua e aumenta lo score
+

@@ -6,7 +6,7 @@ let score = 0; // Punteggio del giocatore
 document.getElementById('generate').addEventListener('click', function () {
   const difficulty = document.querySelector('input[name="difficulty"]:checked').value;
   console.log("Livello di difficoltà selezionato:", difficulty);
-  
+
   // In base al livello di difficoltà selezionato, chiamiamo createGrid con le dimensioni appropriate
   let rows, cols, numPoops;
   if (difficulty === "easy") {
@@ -44,7 +44,7 @@ function createGrid(rows, cols, numPoops) {
 
       // Aggiunge una cacca nel caso in cui nella casella viene generato
       if (poop.includes(cellNumber)) {
-        cell.innerHTML = '<i class="fa-solid fa-poo"></i>';
+        cell.innerHTML = '<i class="fa-solid fa-poop"></i>';
       } else {
         cell.textContent = cellNumber;
       }
@@ -68,13 +68,16 @@ function createGrid(rows, cols, numPoops) {
 // Funzione per gestire i click sui box
 function cellClick(event) {
   const clickedNumber = parseInt(event.target.textContent);
+  const cell = event.target;
   if (poop.includes(clickedNumber)) {
-    // Se il numero è presente nella lista dei poops, il gioco termina
-    event.target.classList.add('box-poop');
+    // Se il numero è presente nella lista delle cacche, il gioco termina
+    cell.classList.add('box-poop');
+    // Inserisci l'icona della cacca nella cella
+    cell.innerHTML = '<i class="fa-solid fa-poop"></i>';
     endGame();
   } else {
     // Altrimenti, il giocatore ha cliccato su una cella sicura
-    event.target.classList.add('box-safe');
+    cell.classList.add('box-safe');
     score++; // Aumenta il punteggio del giocatore
     // Verifica se il giocatore ha completato il gioco
     if (score === (event.currentTarget.childElementCount - poop.length)) {
@@ -82,3 +85,30 @@ function cellClick(event) {
     }
   }
 }
+
+// Funzione per terminare il gioco e comunicare il punteggio
+function endGame() {
+  const finalScore = document.getElementById('finalScore');
+  finalScore.textContent = "Punteggio: " + score;
+  console.log("Partita terminata. Punteggio: " + score);
+  
+  // Mostra le cacche in tutte le caselle sbagliate
+  const gridCells = document.querySelectorAll('.box:not(.box-safe)');
+  gridCells.forEach(cell => {
+    const cellNumber = parseInt(cell.textContent);
+    if (poop.includes(cellNumber)) {
+      cell.classList.add('box-poop');
+      // Inserisci l'icona della cacca nella cella sbagliata
+      cell.innerHTML = '<i class="fa-solid fa-poop"></i>';
+    }
+  });
+}
+
+  // Mostra le cacche in tutte le caselle sbagliate
+  const gridCells = document.querySelectorAll('.box:not(.box-safe)');
+  gridCells.forEach(cell => {
+    const cellNumber = parseInt(cell.textContent);
+    if (poop.includes(cellNumber)) {
+      cell.classList.add('box-poop');
+    }
+  });
