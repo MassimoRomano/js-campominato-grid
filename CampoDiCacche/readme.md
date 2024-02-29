@@ -41,3 +41,6 @@ che le righe numerate
 
 Step 2. **Modifico gli if and else**
   - inserisco negli if and else il numero di colonne righe e poop da creare per ogni partita 
+
+Step 4. **Genero numeri casuali per le poop**
+  - aggiungo un ciclo while per generare cacche in modo random

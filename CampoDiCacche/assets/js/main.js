@@ -5,12 +5,12 @@ let poop = [];
 let score = 0;
 
 
-// Creazione della griglia di gioco 10x10
+// Event per la creazione della griglia
 document.getElementById('generate').addEventListener('click', function () {
   // Otteniamo il valore del livello di difficoltà selezionato
   const difficulty = document.querySelector('input[name="difficulty"]:checked').value;
 
- // In base al livello di difficoltà selezionato, chiamiamo createGrid con le dimensioni appropriate
+ // COn gli if e else creiamo la griglia di gioco in base alla difficolta'
  let rows, cols, numPoop;
  if (difficulty === "easy") {
    rows = 10;
@@ -26,31 +26,45 @@ document.getElementById('generate').addEventListener('click', function () {
    numPoop = 16;
  }
 
+ console.log("Dimensioni griglia:", rows, "x", cols);
+ console.log("Numero di poops:", numPoop);
+
  createGrid(rows, cols, numPoop);
 });
 
 // Function per creare la griglia di gioco 10x10
-function createGrid(rows, cols) {
+function createGrid(rows, cols, numPoop) {
   //variabile per selezionare l'id presente nell html
   const container = document.getElementById('grid');
-  //ciclo for per il calcolo delle righe
+  // rimuove il contenuto precedente
+  container.innerHTML = ''; 
+  // Azzera l'array dei funghi
+  poop = []; 
+
+  console.log("Creazione griglia di gioco...");
+
+  // Codice per generare casualmente le cacche nella griglia
+  while (poop.length < numPoop) {
+    const poop = Math.floor(Math.random() * (rows * cols)) + 1;
+    if (!poop.includes(poop)) {
+      poop.push(poop);
+    }
+  }
+
+  console.log("Poops generati:", poop);
+
+  //Crea la griglia di gioco
   for (let i = 1; i <= rows; i++) {
-    // Ciclo for per calcolo delle colonne
     for (let x = 1; x <= cols; x++) {
       const cellNumber = (i - 1) * cols + x;
-      // Creazione dell'elemento div per la cella
       const cell = document.createElement('div');
       cell.textContent = cellNumber;
-      // Aggiunta della classe "cell" per lo stile
       cell.classList.add('box');
-      // Aggiunta della cella al contenitore della griglia
-      container.appendChild(cell);
-
+      container.appendChild(cell);  
       cell.addEventListener('click', cellClick);
     }
   }
 }
-
 // Fuction per gestire i click sui box
 function cellClick(event) {
   // Inseriamo un event per farci ridare dalla console una string che ci dice che la cella e cliccata
